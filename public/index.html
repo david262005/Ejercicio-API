@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tablero de Misiones</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Tablero de Misiones</h1>
+      <p class="sub">API Maestro-Detalle con Catálogo y Control de Estado</p>
+      <nav class="tabs">
+        <button class="tab active" data-tab="tablero">Tablero</button>
+        <button class="tab" data-tab="registro">Registrar avance</button>
+        <button class="tab" data-tab="catalogo">Catálogo</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- TABLERO -->
+    <section id="tab-tablero" class="panel">
+      <div class="stats" id="stats"></div>
+      <div class="toolbar">
+        <input id="buscar" type="search" placeholder="Buscar por nombre, carnet o correo…" />
+        <select id="filtro">
+          <option value="todos">Todos</option>
+          <option value="completos">100% completado</option>
+          <option value="pendientes">Con pendientes</option>
+        </select>
+        <button id="recargar" class="btn secondary">Recargar</button>
+      </div>
+      <div class="legend">
+        <span><i class="chip done"></i> Completada</span>
+        <span><i class="chip todo"></i> Pendiente</span>
+        <span><i class="chip none"></i> Sin registrar</span>
+      </div>
+      <div id="lista" class="lista"><p class="muted">Cargando…</p></div>
+    </section>
+
+    <!-- REGISTRO -->
+    <section id="tab-registro" class="panel" hidden>
+      <div class="grid2">
+        <form id="form-registro" class="card">
+          <h2>Maestro (estudiante)</h2>
+          <label>Carnet <input name="carnet" required maxlength="25" placeholder="1890-20-11489" /></label>
+          <label>Nombre <input name="nombre" required maxlength="150" /></label>
+          <label>Correo <input name="correo" type="email" required maxlength="150" /></label>
+          <h2>Detalle (misiones)</h2>
+          <div id="misiones-form" class="misiones-form"><p class="muted">Cargando catálogo…</p></div>
+          <button type="submit" class="btn">Enviar POST /api/registro</button>
+        </form>
+        <div class="card">
+          <h2>JSON a enviar</h2>
+          <textarea id="json" spellcheck="false"></textarea>
+          <div class="row">
+            <button id="enviar-json" class="btn secondary">Enviar este JSON</button>
+            <button id="cargar-carnet" class="btn secondary" title="Rellena el formulario con los datos actuales del carnet">Cargar datos del carnet</button>
+          </div>
+          <h2>Respuesta</h2>
+          <pre id="respuesta" class="respuesta muted">—</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="tab-catalogo" class="panel" hidden>
+      <div id="catalogo" class="catalogo"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
