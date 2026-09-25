@@ -1,0 +1,31 @@
+{
+  "name": "ejercicio-api",
+  "version": "1.0.0",
+  "description": "API Maestro-Detalle con Catálogo y Control de Estado (Estudiantes/Misiones)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david262005/Ejercicio-API.git"
+  },
+  "keywords": [],
+  "author": "Anthony David Martínez León <amartinezl12@miumg.edu.gt>",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/david262005/Ejercicio-API/issues"
+  },
+  "homepage": "https://github.com/david262005/Ejercicio-API#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "mssql": "^12.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
