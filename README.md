@@ -2,6 +2,8 @@
 
 API en Node.js + Express + SQL Server que recibe un JSON maestro-detalle (estudiante + misiones) en un solo POST, y un tablero web que muestra el avance de cada estudiante.
 
+**En línea:** https://ejercicio-api-seven.vercel.app (tablero) · https://ejercicio-api-seven.vercel.app/api/estudiantes (API)
+
 ## Endpoints
 
 | Método | Ruta | Descripción |
